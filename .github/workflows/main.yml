@@ -1,11 +1,11 @@
-name: win 10 RDP tailscale
+name: win 11 RDP tailscale
 
 on:
   workflow_dispatch:
 
 jobs:
   secure-rdp:
-    runs-on: windows-2022
+    runs-on: windows-2025
     timeout-minutes: 350
 
     steps:
@@ -25,7 +25,7 @@ jobs:
 
           Restart-Service -Name TermService -Force
 
-      - name: Create RDP User with Fixed Password
+      - name: Create RDP User with Fixed Password ME2008
         run: |
           $password = "MR.English2008"
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
